@@ -1,0 +1,12 @@
+{
+  "name": "atom-city-lights",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Pastel city lights with a gradient",
+  "keywords": ["syntax", "theme"],
+  "repository": "https://github.com/atomiks/atom-city-lights",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
