@@ -1,11 +1,7 @@
-@import "syntax-variables";
+@import 'syntax-variables';
 
 atom-text-editor {
-  background: radial-gradient(
-    circle at 75% 15%,
-    lighten(@syntax-background-color, 5),
-    @syntax-background-color
-  );
+  background: radial-gradient(circle at 75% 15%, #252b48, @syntax-background-color);
   color: @syntax-text-color;
 
   .wrap-guide {
@@ -100,6 +96,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--unit {
     color: @purple;
   }
+
+  &.syntax--spread {
+    color: @light-pink;
+    font-weight: bold;
+  }
 }
 
 .syntax--storage {
@@ -109,12 +110,20 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 .syntax--constant {
   color: @very-light-gray;
 
+  &::first-letter {
+    color: pink;
+  }
+
   &.syntax--character.syntax--escape {
     color: @cyan;
   }
 
   &.syntax--boolean {
     color: @strong-orange;
+  }
+
+  &.syntax--js.syntax--language:not(.syntax--boolean) {
+    color: @dull;
   }
 
   &.syntax--numeric {
@@ -142,7 +151,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--parameter.syntax--function {
-    color: @light-pink;
+    color: @beige;
   }
 
   &.syntax--language {
@@ -189,7 +198,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     &.syntax--variable {
       color: @syntax-text-color;
 
-      &.syntax--begin, &.syntax--end {
+      &.syntax--begin,
+      &.syntax--end {
         color: @cyan;
       }
     }
@@ -303,6 +313,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--attribute-name {
     color: @orange;
   }
+
+  &.syntax--other.syntax--attribute-name.syntax--id {
+    color: @blue;
+  }
 }
 
 .syntax--meta {
@@ -336,6 +350,20 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--brace {
     color: @cyan;
+  }
+
+  &.syntax--doctype {
+    color: @purple;
+  }
+
+  &.syntax--json.syntax--key {
+    .syntax--string {
+      color: @light-pink;
+
+      &.syntax--punctuation {
+        color: @cyan;
+      }
+    }
   }
 }
 
@@ -381,6 +409,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--raw.syntax--inline {
     color: @green;
   }
+
+  &.syntax--link {
+    color: @strong-cyan;
+    text-decoration: underline;
+  }
 }
 
 .syntax--source.syntax--gfm .syntax--markup {
@@ -389,6 +422,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--heading {
     color: @green;
   }
+}
+
+.syntax--source.syntax--embedded {
+  color: @very-light-gray;
 }
 
 // Mini editor
