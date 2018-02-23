@@ -128,18 +128,19 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
   &.syntax--numeric {
     color: @light-pink;
+
+    &.syntax--css {
+      color: @light-purple;
+    }
   }
 
-  &.syntax--other.syntax--color {
+  &.syntax--other.syntax--color,
+  &.syntax--other.syntax--rgb-value {
     color: @cyan;
   }
 
   &.syntax--other.syntax--symbol {
     color: @green;
-  }
-
-  &.syntax--language.syntax--null {
-    color: @pink;
   }
 }
 
@@ -151,17 +152,19 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--parameter.syntax--function {
-    color: @beige;
+    color: @light-purple;
   }
 
   &.syntax--language {
-    color: @pink;
+    color: @red;
   }
 
-  &.syntax--variable {
-    &.syntax--object {
-      color: @very-light-teal;
-    }
+  &.syntax--property {
+    color: @very-light-gray;
+  }
+
+  &.syntax--object {
+    color: @very-light-gray;
   }
 }
 
