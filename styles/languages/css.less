@@ -5,19 +5,19 @@
     }
 
     &.syntax--property-name {
-      color: @light-teal;
+      color: @blue;
     }
   }
 
   .syntax--keyword {
     &.syntax--unit {
-      color: @strong-orange;
+      color: @purple;
     }
   }
 
   .syntax--constant {
     &.syntax--color {
-      color: @light-orange;
+      color: @cyan;
 
       .syntax--punctuation {
         color: currentColor;
@@ -26,10 +26,6 @@
   }
 
   .syntax--entity {
-    &.syntax--tag {
-      color: @light-gray;
-    }
-
     &.syntax--id {
       color: @purple;
     }
@@ -38,10 +34,6 @@
   .syntax--punctuation {
     &.syntax--delimiter {
       color: @cyan;
-
-      + .syntax--constant.syntax--numeric:not(.syntax--color) {
-        color: @strong-orange;
-      }
     }
   }
 }

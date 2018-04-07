@@ -1,17 +1,6 @@
 .syntax--js {
   &.syntax--constant {
-    color: @very-light-gray;
-  }
-
-  &.syntax--support {
-    &.syntax--variable {
-      &.syntax--property {
-        color: @very-light-gray;
-      }
-      &.syntax--property.syntax--dom {
-        color: @blue;
-      }
-    }
+    color: @strong-orange;
   }
 
   &.syntax--entity {
@@ -24,13 +13,13 @@
 
   &.syntax--variable {
     &.syntax--property {
-      color: @blue;
+      color: @cyan;
     }
     &.syntax--other.syntax--object {
       color: @very-light-gray;
     }
     &.syntax--other.syntax--object.syntax--property {
-      color: @blue;
+      color: @cyan;
     }
   }
 
@@ -42,11 +31,11 @@
 
   &.syntax--constant {
     &.syntax--numeric {
-      color: @strong-orange;
+      color: @pink;
     }
 
     &.syntax--boolean {
-      color: @red;
+      color: @strong-orange;
     }
   }
 

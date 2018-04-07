@@ -4,6 +4,12 @@
   }
 }
 
+.syntax--spread + .syntax--property {
+  .syntax--variable.syntax--property {
+    color: @very-light-gray;
+  }
+}
+
 atom-text-editor {
   // Over-nesting to override `language-babel` default styles.
   .syntax--source.syntax--js.syntax--jsx {
