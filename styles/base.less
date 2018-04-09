@@ -94,7 +94,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
     &.syntax--logical,
     &.syntax--comparison,
-    &.syntax--ternary {
+    &.syntax--ternary,
+    &.syntax--assignment {
       color: @purple;
     }
 
@@ -138,7 +139,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--boolean {
-    color: @strong-orange;
+    color: @pink;
   }
 
   &.syntax--js.syntax--language:not(.syntax--boolean) {
@@ -146,7 +147,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--numeric {
-    color: @pink;
+    color: @strong-orange;
 
     &.syntax--css {
       color: @light-purple;
@@ -421,6 +422,12 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     }
     .syntax--storage {
       color: @purple;
+    }
+  }
+
+  &.syntax--function-call {
+    .syntax--function {
+      color: @blue;
     }
   }
 }

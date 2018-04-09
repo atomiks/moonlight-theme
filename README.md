@@ -4,4 +4,4 @@ Pretty syntax theme for Atom.
 
 A fork of the `Atom Material` syntax theme.
 
-<img src="https://i.gyazo.com/a09804fed878b4cb0eecd819fb6e18a7.png">
+<img src="https://i.gyazo.com/1d77d7b8143ce16a37b0120f3dca1b85.png">
