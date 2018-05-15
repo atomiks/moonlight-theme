@@ -1,7 +1,8 @@
-# atom-city-lights
+# Moonlight theme
 
-Pretty syntax theme for Atom.
+Bright bubblegum colors and a moonlit gradient background.
 
 A fork of the `Atom Material` syntax theme.
 
-<img src="https://i.gyazo.com/1d77d7b8143ce16a37b0120f3dca1b85.png">
+<img src="https://i.gyazo.com/96b68454c8dd39b6f76cb1c619c0898f.png">
+<img src="https://i.gyazo.com/b9f0c2fa16279a002d8c4729fc79ef20.png">

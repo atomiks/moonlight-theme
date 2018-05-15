@@ -1,7 +1,11 @@
 @import 'syntax-variables';
 
 atom-text-editor {
-  background: radial-gradient(circle at 75% 15%, #252b48, @syntax-background-color);
+  background: radial-gradient(
+    circle at 75% 15%,
+    #252b48,
+    @syntax-background-color
+  );
   color: @syntax-text-color;
 
   .wrap-guide {
@@ -94,13 +98,8 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
     &.syntax--logical,
     &.syntax--comparison,
-    &.syntax--ternary,
-    &.syntax--assignment {
+    &.syntax--ternary {
       color: @purple;
-    }
-
-    &.syntax--regexp {
-      color: @light-purple;
     }
   }
 
@@ -162,6 +161,10 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--symbol {
     color: @green;
   }
+  
+  &.syntax--character-class.syntax--regexp {
+    color: @cyan;
+  }
 }
 
 .syntax--variable {
@@ -205,7 +208,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--regexp {
-    color: @pink;
+    color: @cyan;
 
     .syntax--source.syntax--ruby.syntax--embedded {
       color: @orange;
@@ -225,8 +228,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
     &.syntax--array,
     &.syntax--parameters,
-    &.syntax--string,
-    &.syntax--variable {
+    &.syntax--string &.syntax--variable {
       color: @syntax-text-color;
 
       &.syntax--begin,
@@ -410,9 +412,11 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--parameters {
-    .syntax--variable,
-    .syntax--type {
-      color: @light-purple !important;
+    .syntax--variable {
+      color: @light-purple;
+    }
+    .syntax--spread + .syntax--property .syntax--variable {
+      color: @light-purple;
     }
   }
 

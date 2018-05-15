@@ -10,6 +10,10 @@
       }
     }
   }
+  
+  &.syntax--object.syntax--console {
+    color: @orange;
+  }
 
   &.syntax--variable {
     &.syntax--property {
@@ -44,6 +48,10 @@
   &.syntax--delimiter.syntax--object.syntax--comma,
   &.syntax--brace.syntax--curly {
     color: @cyan;
+    
+    &.syntax--string {
+      color: @green;
+    }
 
     .syntax--comment & {
       color: @syntax-comment-color;
@@ -52,5 +60,11 @@
 
   &.syntax--export .syntax--variable.syntax--default {
     color: @purple;
+  }
+  
+  &.syntax--regexp.syntax--string {
+    .syntax--punctuation {
+      color: @cyan;
+    }
   }
 }

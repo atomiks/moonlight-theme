@@ -1,18 +1,19 @@
-import Component from "component";
+import Component from "component"
 
 /* Comment */
 class Highlight extends Component {
   constructor() {
     this.data = {
-      string: "hello!",
+      string: "hello",
       boolean: true && false,
       nil: undefined || null,
-      number: 123456789,
-      function: (...rest) => {
-        return Math.min(...rest);
+      regex: /^[12345](hello).+$/,
+      number: -123456789,
+      function: (...numbers) => {
+        return Math.min(...numbers)
       }
-    };
+    }
   }
 }
 
-export default Highlight;
+export default Highlight
