@@ -2,12 +2,12 @@
   "name": "moonlight",
   "theme": "syntax",
   "version": "0.6.1",
-  "description": "Pastel bubblegum colors with a gradient",
+  "description": "Bright bubblegum colors with a moonlit gradient background.",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atomiks/atom-city-lights",
+  "repository": "https://github.com/atomiks/moonlight",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
