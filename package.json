@@ -7,7 +7,7 @@
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/atomiks/moonlight",
+  "repository": "https://github.com/atomiks/moonlight-theme",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
