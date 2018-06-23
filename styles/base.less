@@ -1,4 +1,10 @@
-@import 'syntax-variables';
+@import "syntax-variables";
+
+@keyframes flash {
+  from {
+    background-color: @blue;
+  }
+}
 
 atom-text-editor {
   background: radial-gradient(
@@ -7,6 +13,17 @@ atom-text-editor {
     @syntax-background-color
   );
   color: @syntax-text-color;
+
+  .highlight.find-result .region {
+    border: 1px solid @blue;
+    border-radius: 4px;
+  }
+
+  .highlight.current-result .region,
+  .highlight.current-result ~ .highlight.selection .region {
+    border: 2px solid @blue;
+    border-radius: 4px;
+  }
 
   .wrap-guide {
     background-color: @syntax-indent-guide-color;
@@ -94,11 +111,9 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--operator {
-    color: @cyan;
+    color: @light-cyan;
 
-    &.syntax--logical,
-    &.syntax--comparison,
-    &.syntax--ternary {
+    &.syntax--logical {
       color: @purple;
     }
   }
@@ -161,7 +176,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--other.syntax--symbol {
     color: @green;
   }
-  
+
   &.syntax--character-class.syntax--regexp {
     color: @cyan;
   }

@@ -10,25 +10,25 @@
       }
     }
   }
-  
+
   &.syntax--object.syntax--console {
     color: @orange;
   }
 
   &.syntax--variable {
-    &.syntax--property {
-      color: @cyan;
-    }
-    &.syntax--other.syntax--object {
-      color: @very-light-gray;
-    }
+    &.syntax--property,
     &.syntax--other.syntax--object.syntax--property {
       color: @cyan;
+    }
+
+    &.syntax--other.syntax--object {
+      color: @very-light-gray;
     }
   }
 
   &.syntax--string.syntax--quoted.syntax--template {
-    .syntax--other.syntax--object.syntax--property {
+    .syntax--other.syntax--object.syntax--property,
+    .syntax--punctuation.syntax--quasi {
       color: @green;
     }
   }
@@ -36,6 +36,10 @@
   &.syntax--constant {
     &.syntax--numeric {
       color: @strong-orange;
+    }
+
+    &.syntax--label {
+      color: @syntax-text-color;
     }
 
     &.syntax--boolean {
@@ -48,7 +52,7 @@
   &.syntax--delimiter.syntax--object.syntax--comma,
   &.syntax--brace.syntax--curly {
     color: @cyan;
-    
+
     &.syntax--string {
       color: @green;
     }
@@ -58,12 +62,20 @@
     }
   }
 
-  &.syntax--export .syntax--variable.syntax--default {
-    color: @purple;
+  &.syntax--brace.syntax--litobj {
+    color: @light-cyan;
   }
-  
+
   &.syntax--regexp.syntax--string {
     .syntax--punctuation {
+      color: @cyan;
+    }
+  }
+
+  &.syntax--import,
+  &.syntax--export {
+    .syntax--control,
+    .syntax--default {
       color: @cyan;
     }
   }

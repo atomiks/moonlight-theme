@@ -4,28 +4,32 @@
   }
 
   .syntax--meta {
-    &.syntax--array.syntax--structure .syntax--string.syntax--quoted.syntax--double {
+    &.syntax--array.syntax--structure
+      .syntax--string.syntax--quoted.syntax--double {
       color: @green;
 
       > * {
         color: currentColor;
 
         &.syntax--punctuation {
-          &.syntax--begin, &.syntax--end {
+          &.syntax--begin,
+          &.syntax--end {
             color: @cyan;
           }
         }
       }
     }
 
-    .syntax--punctuation.syntax--separator.syntax--key-value + .syntax--string.syntax--quoted {
+    .syntax--punctuation.syntax--separator.syntax--key-value
+      + .syntax--string.syntax--quoted {
       color: @green;
 
       * {
         color: currentColor;
 
         &.syntax--punctuation {
-          &.syntax--begin, &.syntax--end {
+          &.syntax--begin,
+          &.syntax--end {
             color: @cyan;
           }
         }
@@ -33,7 +37,7 @@
     }
 
     &.syntax--structure.syntax--dictionary .syntax--string.syntax--quoted {
-      color: @purple;
+      color: @blue;
 
       .syntax--punctuation.syntax--string {
         color: currentColor;
