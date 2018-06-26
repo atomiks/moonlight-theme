@@ -38,7 +38,7 @@ atom-text-editor {
   }
 
   .cursor-line {
-    background-color: fade(darken(@syntax-background-color, 20%), 20%);
+    background-color: fade(lighten(@syntax-background-color, 10%), 20%);
   }
 
   .gutter {
@@ -47,7 +47,7 @@ atom-text-editor {
 
     .line-number {
       &.cursor-line {
-        background-color: darken(@syntax-background-color, 2.5%);
+        background-color: lighten(@syntax-background-color, 5%);
         color: @syntax-gutter-text-color-selected;
       }
 
@@ -111,10 +111,17 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--operator {
-    color: @light-cyan;
+    color: @cyan;
 
     &.syntax--logical {
       color: @purple;
+    }
+
+    &.syntax--relational,
+    &.syntax--comparison,
+    &.syntax--ternary,
+    &.syntax--assignment {
+      color: @light-cyan;
     }
   }
 
