@@ -4,7 +4,8 @@
       color: @cyan;
     }
 
-    &.syntax--property-name {
+    &.syntax--property-name,
+    &.syntax--property-names {
       color: @blue;
     }
   }
@@ -15,6 +16,10 @@
     }
   }
 
+  .syntax--units {
+    color: @purple;
+  }
+
   .syntax--constant {
     &.syntax--color {
       color: @cyan;
@@ -23,11 +28,17 @@
         color: currentColor;
       }
     }
+    &.syntax--pseudo {
+      color: @light-green;
+    }
   }
 
   .syntax--entity {
     &.syntax--id {
       color: @purple;
+    }
+    &.syntax--pseudo-class {
+      color: @light-green;
     }
   }
 
@@ -38,8 +49,14 @@
   }
 }
 
-.syntax--sass, .syntax--scss, .syntax--less {
+.syntax--sass,
+.syntax--scss,
+.syntax--less {
   &.syntax--variable {
     color: @very-light-teal;
   }
+}
+
+.syntax--styled {
+  color: @very-light-teal;
 }

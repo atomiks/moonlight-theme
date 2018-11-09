@@ -1,4 +1,4 @@
-@import "syntax-variables";
+@import 'syntax-variables';
 
 @keyframes flash {
   from {
@@ -26,7 +26,7 @@ atom-text-editor {
   }
 
   .wrap-guide {
-    background-color: @syntax-indent-guide-color;
+    background-color: lighten(@syntax-indent-guide-color, 8%);
   }
 
   .indent-guide {
@@ -38,7 +38,7 @@ atom-text-editor {
   }
 
   .cursor-line {
-    background-color: fade(lighten(@syntax-background-color, 10%), 20%);
+    background-color: @sytax-cursor-line-color;
   }
 
   .gutter {
@@ -47,11 +47,11 @@ atom-text-editor {
 
     .line-number {
       &.cursor-line {
-        background-color: lighten(@syntax-background-color, 5%);
         color: @syntax-gutter-text-color-selected;
       }
 
       &.cursor-line-no-selection {
+        background-color: transparent;
         color: @syntax-gutter-text-color-selected;
       }
     }
@@ -77,6 +77,36 @@ atom-text-editor {
   }
 }
 
+// Mini editor
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
+
+// Bracket Matcher
+atom-text-editor {
+  .highlights {
+  }
+
+  .highlight.bracket-matcher {
+    z-index: 1;
+  }
+
+  .highlight .region.bracket-matcher {
+    z-index: inherit;
+  }
+
+  .region.bracket-matcher {
+    border-bottom: 2px solid @blue;
+    z-index: 999999;
+    box-sizing: border-box;
+  }
+}
+
+// Misspelled word
+atom-text-editor .spell-check-misspelling .region {
+  z-index: auto;
+}
+
 atom-text-editor .search-results .syntax--marker .region {
   background-color: transparent;
   border: 1px solid @syntax-result-marker-color;
@@ -92,7 +122,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 }
 
 .syntax--punctuation {
-  color: @cyan;
+  color: @very-light-teal;
 }
 
 .syntax--keyword {
@@ -111,7 +141,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--operator {
-    color: @cyan;
+    color: @very-light-teal;
 
     &.syntax--logical {
       color: @purple;
@@ -141,7 +171,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: @very-light-gray;
 
   &.syntax--punctuation {
-    color: @cyan;
+    color: @very-light-teal;
   }
 
   &::first-letter {
@@ -149,7 +179,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--character.syntax--escape {
-    color: @cyan;
+    color: @very-light-teal;
   }
 
   &.syntax--boolean {
@@ -219,7 +249,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   color: @green;
 
   &.syntax--unquoted {
-    color: @very-light-gray;
+    color: @light-green;
   }
 
   &.syntax--regexp {
@@ -248,7 +278,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
       &.syntax--begin,
       &.syntax--end {
-        color: @cyan;
+        color: @very-light-teal;
       }
     }
 
@@ -278,18 +308,18 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
     }
 
     &.syntax--embedded {
-      color: @cyan;
+      color: @very-light-teal;
     }
   }
 
   &.syntax--separator {
     &.syntax--key-value {
-      color: @cyan;
+      color: @very-light-teal;
     }
   }
 
   &.syntax--terminator {
-    color: @cyan;
+    color: @very-light-teal;
   }
 }
 
@@ -387,7 +417,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   &.syntax--delimiter {
     &.syntax--period,
     &.syntax--comma {
-      color: @cyan;
+      color: @very-light-teal;
     }
   }
 
@@ -409,7 +439,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
   }
 
   &.syntax--brace {
-    color: @cyan;
+    color: @very-light-teal;
   }
 
   &.syntax--doctype {
@@ -421,7 +451,7 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
       color: @pink;
 
       &.syntax--punctuation {
-        color: @cyan;
+        color: @very-light-teal;
       }
     }
   }
@@ -509,28 +539,4 @@ atom-text-editor .search-results .syntax--marker.current-result .region {
 
 .syntax--source.syntax--embedded {
   color: @very-light-gray;
-}
-
-// Mini editor
-atom-text-editor[mini] .scroll-view {
-  padding-left: 1px;
-}
-
-// Bracket Matcher
-atom-text-editor {
-  .highlight .region.bracket-matcher {
-    z-index: inherit;
-  }
-}
-
-.bracket-matcher .region {
-  border-bottom: 1px solid @syntax-cursor-color;
-  box-sizing: border-box;
-  background-color: fade(@syntax-text-color, 10%);
-  box-shadow: inset 0 -1px 0 @syntax-cursor-color;
-}
-
-// Misspelled word
-atom-text-editor .spell-check-misspelling .region {
-  z-index: auto;
 }
